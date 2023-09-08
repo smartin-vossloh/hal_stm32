@@ -1649,6 +1649,24 @@
 				pinmux = <STM32_PINMUX('B', 4, ANALOG)>;
 			};
 
+			/* I2S_SD */
+
+			/omit-if-no-ref/ i2s1_sdi_pa6: i2s1_sdi_pa6 {
+				pinmux = <STM32_PINMUX('A', 6, AF5)>;
+			};
+
+			/omit-if-no-ref/ i2s1_sdo_pa7: i2s1_sdo_pa7 {
+				pinmux = <STM32_PINMUX('A', 7, AF5)>;
+			};
+
+			/omit-if-no-ref/ i2s2_sdi_pb14: i2s2_sdi_pb14 {
+				pinmux = <STM32_PINMUX('B', 14, AF5)>;
+			};
+
+			/omit-if-no-ref/ i2s2_sdo_pb15: i2s2_sdo_pb15 {
+				pinmux = <STM32_PINMUX('B', 15, AF5)>;
+			};
+
 			/* LTDC */
 
 			/omit-if-no-ref/ ltdc_r2_pa1: ltdc_r2_pa1 {
