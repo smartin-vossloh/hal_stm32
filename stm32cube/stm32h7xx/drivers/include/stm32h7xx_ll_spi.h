@@ -3029,6 +3029,13 @@ __STATIC_INLINE uint32_t LL_I2S_GetStandard(SPI_TypeDef *SPIx)
 __STATIC_INLINE void LL_I2S_SetTransferMode(SPI_TypeDef *SPIx, uint32_t Standard)
 {
   MODIFY_REG(SPIx->I2SCFGR, SPI_I2SCFGR_I2SCFG, Standard);
+
+  if (Standard == LL_I2S_MODE_SLAVE_TX || Standard == LL_I2S_MODE_MASTER_TX) {
+  	MODIFY_REG(SPIx->CR1, SPI_CR1_HDDIR, SPI_CR1_HDDIR);
+  }
+  if (Standard == LL_I2S_MODE_SLAVE_TX || Standard == LL_I2S_MODE_MASTER_TX) {
+  	MODIFY_REG(SPIx->CR1, SPI_CR1_HDDIR, 0);
+  }
 }
 
 /**
